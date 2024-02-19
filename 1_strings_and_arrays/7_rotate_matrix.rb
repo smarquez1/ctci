@@ -4,12 +4,12 @@
 # write a method to rotate the image by 90 degrees. Can you do this in place?
 
 def rotate_matrix(image)
-  n = image.size
-  rotated = Array.new(n) { Array.new(n) }
+  size = image.size
+  rotated = Array.new(size) { Array.new(size) }
 
   image.each_with_index do |row, x|
     row.each_with_index do |cell, y|
-      rotated[y][n - 1 - x] = cell
+      rotated[y][size - 1 - x] = cell # row becomes column but column becomes size - row 
     end
   end
 
